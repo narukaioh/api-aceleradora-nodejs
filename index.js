@@ -7,7 +7,8 @@ app.get("/", (request, response) => {
 })
 
 app.get("/soma/:num/:num2", (request, response) => {
-    response.send({ message: "novo endpoint" })
+    const { num, num2 } = request.params
+    response.send({ result: parseInt(num) + parseInt(num2) })
 })
 
 app.listen(port, () => {
